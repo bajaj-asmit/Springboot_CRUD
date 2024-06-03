@@ -1,22 +1,44 @@
 package com.project.social_youtube.module;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity(name = "User3")
 public class User {
+    @Id()
     private Integer id;
-    private String name;
+    private String firstname;
+    private String lastname;
+
     private String email;
-    private String phonenumber;
     private String password;
 
     public User()
     {
 
     }
-    public User(String name, String email, String phonenumber, String password,Integer id) {
-        this.name = name;
+    public User(String firstname, String lastname, String email, String password,Integer id) {
+        this.firstname = firstname;
         this.email = email;
-        this.phonenumber = phonenumber;
+        this.lastname = lastname;
         this.password = password;
         this.id=id;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public Integer getId() {
@@ -27,13 +49,6 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getEmail() {
         return email;
@@ -43,13 +58,7 @@ public class User {
         this.email = email;
     }
 
-    public String getPhonenumber() {
-        return phonenumber;
-    }
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
-    }
 
     public String getPassword() {
         return password;
